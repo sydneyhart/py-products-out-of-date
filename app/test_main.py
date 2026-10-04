@@ -80,7 +80,17 @@ from app.main import outdated_products
         ),
     ],
 )
-def test_outdated_products(today, products, expected):
+@pytest.mark.parametrize(
+    "today, products, expected",
+    [
+        # ... existing test cases ...
+    ],
+)
+def test_outdated_products(
+    today: datetime.date,
+    products: list,
+    expected: list,
+) -> None:
     with patch("app.main.datetime.date") as mock_date:
         mock_date.today.return_value = today
         assert outdated_products(products) == expected
