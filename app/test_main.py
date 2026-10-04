@@ -80,12 +80,7 @@ from app.main import outdated_products
         ),
     ],
 )
-@pytest.mark.parametrize(
-    "today, products, expected",
-    [
-        # ... existing test cases ...
-    ],
-)
+
 def test_outdated_products(
     today: datetime.date,
     products: list,
